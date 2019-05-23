@@ -19,10 +19,12 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_POSTS:
+      console.log("reducer")
       return {
         ...state,
-        //action.payload because we called it payload in postActions.js
+        //action.payload because we called it payload in postActions.js;
         
+        //items will be sent to our component posts;
         items: action.payload
       }
     default:
