@@ -13,8 +13,18 @@ const initialState = {
 
 //evaluates what type we are dealing with;
 //action will be an object with type property;
+
+//this function is an actual reducer;
+//accepts previous state & action and returns a new state
 export default function(state = initialState, action) {
   switch(action.type) {
+    case FETCH_POSTS:
+      return {
+        ...state,
+        //action.payload because we called it payload in postActions.js
+        
+        items: action.payload
+      }
     default:
       return state;
   }
