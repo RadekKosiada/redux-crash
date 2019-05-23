@@ -8,18 +8,6 @@ export class Posts extends Component {
     }
   }
 
-  componentWillMount() {
-    fetch('http://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      this.setState({
-        posts: data
-      })
-    })
-    .catch(err => console.log(err.message))
-  }
-
   render() {
     const postItems = this.state.posts.map(post => (
       <div key={post.id}>
