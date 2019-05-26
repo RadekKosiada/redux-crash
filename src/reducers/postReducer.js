@@ -26,7 +26,13 @@ export default function(state = initialState, action) {
         
         //items will be sent to our component posts;
         items: action.payload
-      }
+      };
+      case NEW_POSTS:
+          return {
+            ...state,
+            //payload will be a new single post, thus item, singular
+            item: action.payload
+          };
     default:
       return state;
   }
